@@ -1,0 +1,239 @@
+:root{
+    /*### Primary*/
+
+    --Purple-600: hsl(246, 80%, 60%);
+
+    --Orange-300: hsl(15, 100%, 70%);
+    --Blue-300: hsl(195, 74%, 62%);
+    --Pink-400: hsl(348, 100%, 68%);
+    --Green-400: hsl(145, 58%, 55%);
+    --Purple-700: hsl(264, 64%, 52%);
+    --Yellow-300: hsl(43, 84%, 65%);
+
+/*### Neutral*/
+
+    --Navy-950: hsl(226, 43%, 10%);
+    --Navy-900: hsl(235, 46%, 20%);
+    --Purple-500: hsl(235, 45%, 61%);
+    --Navy-200: hsl(236, 100%, 87%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: var(--Navy-950);
+    font-family: Rubik, serif;
+    padding: 6rem 2rem;
+    justify-content: center;
+    align-content: center;
+}
+section.activity-tracker{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 2rem;
+    color: var(--Navy-200);
+}
+
+.activity-tracker_menu{
+    background-color: var(--Navy-900);
+    border-radius: 1em;
+}
+.activity-tracker_owner{
+    display: flex;
+    background-color: var(--Purple-600);
+    border-radius: 1em;
+    padding: 2em 1.75em;
+    align-items: center;
+    gap: 1em;
+}
+.activity-tracker_owner-img{
+    width: 27.5%;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+.activity-tracker_owner p{
+    font-size: 0.9em;
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+.activity-tracker_owner h1{
+    font-size: 1.4em;
+    font-weight: 300;
+    color: hsl(237, 100%, 93%);
+}
+.activity-tracker_options{
+    padding: 1.5em 2.25em;
+    display: flex;
+    justify-content: space-between;
+}
+.activity-tracker_option{
+    background-color: var(--Navy-900);
+    border: none;
+    font-size: 1.1em;
+    color: var(--Purple-500);
+    cursor: pointer;
+}
+.activity-tracker_option:hover{
+    color: hsl(237, 100%, 93%);
+}
+.active{
+    color: hsl(237, 100%, 93%);
+}
+
+.work{
+    background-color: var(--Orange-300);
+    width: 100%;
+    border-radius: 1em;
+}
+.play{
+    background-color: var(--Blue-300);
+    width: 100%;
+    border-radius: 1em;
+}
+.study{
+    background-color: var(--Pink-400);
+    width: 100%;
+    border-radius: 1em;
+}
+.exercise{
+    background-color: var(--Green-400);
+    width: 100%;
+    border-radius: 1em;
+}
+.social{
+    background-color: var(--Purple-700);
+    width: 100%;
+    border-radius: 1em;
+}
+.self-care{
+    background-color: var(--Yellow-300);
+    width: 100%;
+    border-radius: 1em;
+}
+.activity_bg{
+    overflow: hidden;
+}
+.activity_bg img{
+    display: block;
+    justify-self: end;
+    transform: translate(-1.5rem, -0.5rem);
+    position: relative;
+    z-index: var(--z-index-bottom);
+}
+.activity_info{
+    background-color: var(--Navy-900);
+    border-radius: 1em;
+    display: block;
+    margin-top: -2.5em;
+    padding: 1.75em;
+    position: relative;
+}
+.exercise .activity_info{
+    margin-top: -1em;
+}
+.social .activity_info{
+    margin-top: -4em;
+}
+.self-care .activity_info{
+    margin-top: -1.5em;
+}
+.activity_info:hover{
+    background-color: hsl(234, 45%, 30%);
+}
+.activity_header{
+    display: flex;
+    justify-content: space-between;
+}
+.activity_header h2{
+    font-size: 1.1em;
+    font-weight: 400;
+    color: var(--Navy-200);
+}
+.activity_header button{
+    background: none;
+    border: none;
+}
+.activity_options:hover path{
+    cursor: pointer;
+    fill: white;
+}
+.activity_timeframes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5em;
+}
+.activity_current-timeframe{
+    font-size: 2em;
+    font-weight: 300;
+    color: white;
+    margin: 0;
+}
+.activity_previous-timeframe{
+    display: flex;
+    font-size: 0.95em;
+}
+
+@media screen and (min-width: 500px){
+    section.activity-tracker{
+        grid-template-columns: 1fr 1fr;
+        height: 51em;
+    }
+    .activity-tracker_menu{
+       grid-area: 1 / 1 / 3 / 2;
+    }
+    .activity-tracker_owner{
+        display: block;
+    }
+    .activity-tracker_owner-img{
+        width: 35%;
+    }
+    .activity-tracker_owner p{
+        font-size: 1.5em;
+        margin: 1em auto;
+    }
+    .activity-tracker_owner h1{
+        font-size: 3em;
+        margin-right: 2em;
+    }
+    .activity-tracker_options{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1em;
+    }
+    .work, .play, .study, .exercise, .social, .self-care{
+        align-self: flex-end;
+    }
+    .activity_timeframes{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .activity_timeframes h3{
+        font-size: 3.5em;
+        margin-top: 0.5em;
+        margin-right: 2em;
+    }
+}
+
+@media screen and (min-width:80em){
+    section.activity-tracker{
+        grid-template-columns:1fr 1fr 1fr 1fr;
+        max-width: 75em;
+        gap: 1.5em;
+    }
+    .activity_timeframes h3{
+        margin-right: 0.75em;
+    }
+}
